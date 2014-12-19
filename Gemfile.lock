@@ -54,6 +54,8 @@ GEM
     tilt (1.4.1)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
+    validates_email_format_of (1.6.1)
+      i18n
 
 PLATFORMS
   ruby
@@ -69,3 +71,4 @@ DEPENDENCIES
   shotgun
   sinatra
   thin
+  validates_email_format_of

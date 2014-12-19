@@ -16,6 +16,8 @@ require 'active_record'
 require 'logger'
 
 require 'sinatra'
+require 'date'
+require 'validates_email_format_of'
 
 require 'erb'
 require 'bcrypt'
