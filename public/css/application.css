@@ -3,8 +3,14 @@
   float: right;
   margin-top: 40px;
 }
+
 strong {
   font-size: 30px;
+}
+
+.container {
+  display: inline-block;
+  margin-left: 5%;
 }
 
 
