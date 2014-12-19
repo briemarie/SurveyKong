@@ -1,0 +1,31 @@
+<h1>My name is: <%= @user.name %></h1>
+
+<h1>My name is: <%= @user.name %></h1>
+
+<h2>Surveys i have taken: </h2>
+<% @surveys.each do |survey| %>
+  <ol id ="surveys_taken">
+    <li><%= survey.title %></li>
+  </ol>
+<% end %>
+
+
+
+<h2 >My created surveys: </h2>
+<ol id ='surveys_created' >
+  <% @created.each do |survey| %>
+  <a href="/users/<%= @user.id %>/surveys/<%= survey.id %>"><li><%= survey.title %></li></a>
+  <% end %>
+</ol>
+
+<div id='survey_container'>
+
+</div>
+
+<a id="create_survey" href="/users/<%= @user.id %>/surveys">Create survey</a>
+<!-- <form id='create_survey' action='/users/<%= @user.id %>/surveys' method="post">
+  <input type='text' name='title' placeholder='survey title'>
+  <input type= 'submit' value='create survey'>
+</form> -->
+
+
