@@ -6,3 +6,4 @@ class User < ActiveRecord::Base
   has_many :surveys, through: :questions
 end
 
+#comet
