@@ -1,9 +1,7 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+#kong {
+  float: right;
+  margin-top: 40px;
 }
-th {
-  text-align: left;
+strong {
+  font-size: 30px;
 }
