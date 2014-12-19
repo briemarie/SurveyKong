@@ -1,10 +1,19 @@
+body {
+  padding-top: 75px;
+}
 
 #kong {
+  margin-top: -30px;
   float: right;
-  margin-top: 40px;
 }
+
 strong {
   font-size: 30px;
+}
+
+.container {
+  display: inline-block;
+  margin-left: 5%;
 }
 
 

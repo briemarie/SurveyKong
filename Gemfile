@@ -1,6 +1,8 @@
 ruby '2.0.0'
 source 'https://rubygems.org'
 
+gem 'bcrypt'
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -15,6 +17,7 @@ gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 
 gem 'rake'
+gem 'rack-flash3'
 
 gem 'shotgun'
 
