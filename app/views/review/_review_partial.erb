@@ -1,0 +1,57 @@
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="review-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="review-label">These are your results for survey "<%=@survey.title%>"</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <% @survey.questions.each_with_index do |question, index| %>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading<%=index.to_s%>">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=index.to_s%>" aria-expanded="<%= index == 0 ? 'true' : 'false' %>" aria-controls="collapse<%=index.to_s%>">
+                  <%= (index +1).to_s + ". " + question.content%>
+                </a>
+              </h4>
+            </div>
+            <div id="collapse<%=index.to_s%>" class="panel-collapse collapse <%= index == 0 ? 'in' : '' %>" role="tabpanel" aria-labelledby="heading<%=index.to_s%>">
+              <div class="panel-body">
+                <table class= "table table-hover">
+                  <thead>
+                    <tr>
+                      <th class="col-md-3"></th>
+                      <% question.choices.each do |choice|%>
+                      <th ><%=choice.content%></th>
+                      <%end%>
+                      <th class="col-md-1">Total</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <th class="col-md-3">Responses</th>
+                    <% question.choices.each do |choice|%>
+                    <td><%=choice.answers.length%></td>
+                    <%end%>
+                    <th><%=question.answers.length%></th>
+                  </tr>
+                  <tr>
+                    <th class="col-md-3">Percentage</th>
+                    <% question.choices.each do |choice|%>
+                    <td><%=(((choice.answers.length.to_f/question.answers.length).round(2)) * 100).to_i.to_s + "%"%></td>
+                    <%end%>
+                    <th></th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <%end%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

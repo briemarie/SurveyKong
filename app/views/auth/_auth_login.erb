@@ -1,7 +1,7 @@
 
-  <%if @errors%>
-  <p><%=@errors%></p>
-  <%end%>
+<%if @errors%>
+<p><%=@errors%></p>
+<%end%>
 
 <div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="signin-label" aria-hidden="true">
   <div class="modal-dialog">
@@ -9,22 +9,22 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="signin-label">Sign In</h4>
+      </div>
+      <form id="sign-in" method="post" action="/sessions">
+        <label class="label" for="username">Username</label>
+        <input type="username" name="username" placeholder="username">
+        <br>
+        <label class="label" for="email">Email</label>
+        <input type="email" name="email" placeholder="e.g., me@example.com" value="<%= @email %>"><br>
+        <label class="label" for="password">Password</label>
+        <input type="password" name="password" placeholder="6 or more characters">
+        <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <div class="submit"><input type="submit" value="Sign In"></div>
+          <!-- <button type="button" class="btn btn-primary">Save Me</button> -->
         </div>
-        <form id="sign-in" method="post" action="/sessions">
-          <label class="label" for="username">Username</label>
-          <input type="username" name="username" placeholder="username">
-          <br>
-          <label class="label" for="email">Email</label>
-          <input type="email" name="email" placeholder="e.g., me@example.com" value="<%= @email %>"><br>
-          <label class="label" for="password">Password</label>
-          <input type="password" name="password" placeholder="6 or more characters">
-          <br>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <div class="submit"><input type="submit" value="Sign In"></div>
-            <!-- <button type="button" class="btn btn-primary">Save Me</button> -->
-          </div>
-        </form>
+      </form>
     </div>
   </div>
 </div>

@@ -15,5 +15,9 @@ strong {
   display: inline-block;
   margin-left: 5%;
 }
+p {
+  font-size: 200px;
+  text-align: center;
+}
 
 

@@ -20,9 +20,9 @@ gem 'rake'
 gem 'rack-flash3'
 
 gem 'shotgun'
+gem 'faker'
 
 group :test do
-  gem 'faker'
   gem 'rspec'
   gem 'rack-test'
   gem 'capybara'
