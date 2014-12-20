@@ -7,19 +7,24 @@
 
 <ol>
   <li><a id="add_question" href="/users/<%= @user.id %>/surveys/<%= @survey.id %>/questions">add question</a></li>
-  <a href="/users/<%= @user.id %>/surveys/<%= @survey.id %>/questions/:id/choices">add_choice</a>
 
 </ol>
-
+<form id='question' action='/users/<%= @user.id %>/surveys/questions' method="post">
 <div id="questions-container">
-  <div id="choice-container">
+<ol>
+  <% @questions.each do |question| %>
+    <li id="<%=question.id  %>"><%= question.content %></li>
 
-  </div>
+  <% end %>
+</ol>
 </div>
-<!-- <form id='question' action='/users/<%= @user.id %>/surveys/questions' method="post">
-  <input type='text' name='content' placeholder='content'>
-  <input type= 'submit' value='add question'>
+
+
+
+
+<!--   <input type='text' name='content' placeholder='content'>
+  <input type= 'submit' value='add question'> -->
 </form>
- -->
+
 
 

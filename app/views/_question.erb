@@ -1,4 +1,8 @@
-<form id='question' action='/users/<%= @user.id %>/surveys/questions' method="post">
-  <input type='text' name='question' placeholder='content'>
-  <input type= 'submit' value='add question'>
-</form>
+<!-- <form id='question' action='/users/<%= @user.id %>/surveys/<%= @survey.id %>
+/questions' method="post"> -->
+  <input type='text' name='content' placeholder='content'>
+  <a id="question<%= @num_of_questions %>" href="/users/<%= @user.id %>/surveys/<%= @survey.id %>/choices">add_choice</a>
+  <div id="choice-container<%= @num_of_questions %>">
+
+  </div>
+<!-- </form> -->
